@@ -121,27 +121,3 @@ CREATE INDEX idx_user_email ON Users(email);
 CREATE INDEX idx_note_title ON Notes(title);
 CREATE INDEX idx_post_title ON Posts(title);
 
--- Sample Data for Testing
-INSERT INTO Users (username, email, password_hash, full_name) 
-VALUES ('john_doe', 'john@example.com', 'hashed_password_example', 'John Doe');
-
-INSERT INTO Categories (name) VALUES ('Mathematics');
-
-INSERT INTO Notes (user_id, title, file_url, subject, visibility) 
-VALUES (1, 'Calculus Notes', 'https://storage.example.com/notes/calc.pdf', 'Mathematics', 'public');
-
-INSERT INTO Note_Categories (note_id, category_id) VALUES (1, 1);
-
-INSERT INTO Posts (user_id, title, content, type) 
-VALUES (1, 'How to solve differential equations?', 'Can someone explain the steps?', 'question');
-
-INSERT INTO Comments (user_id, post_id, content) 
-VALUES (1, 1, 'Check out my calculus notes for help!');
-
-INSERT INTO Projects (creator_id, title, description, status) 
-VALUES (1, 'AI Study Group', 'Group project on AI applications', 'open');
-
-INSERT INTO Project_Members (project_id, user_id, role) VALUES (1, 1, 'admin');
-
-INSERT INTO Notifications (user_id, message, related_id, related_type) 
-VALUES (1, 'New comment on your post', 1, 'comment');
